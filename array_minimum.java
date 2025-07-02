@@ -22,7 +22,7 @@ public class array_minimum {
         arr[i]=sc.nextInt();
     }
     int res=minimum(arr);
-    System.err.println(res);
+    System.out.println(res);
 
  }   
 }
