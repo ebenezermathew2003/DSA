@@ -24,6 +24,10 @@ public class reverse_linkedlist {
     System.out.println("null");
     }
     public ListNode reverse(){
+        if(head==null)
+        {
+            return head;
+        }
         ListNode current=head;
         ListNode previous=null;
         ListNode next=null;
@@ -56,6 +60,7 @@ public void insert_at_end(int value) {
             ll.display();
             ll.head=ll.reverse();
             ll.display();
+
 
     }
     
