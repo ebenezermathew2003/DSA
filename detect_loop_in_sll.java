@@ -31,6 +31,7 @@ public boolean detectloop()
     }
     return false;
 }
+
 public void insertloop()
 {
     head=new ListNode(1);
@@ -44,16 +45,42 @@ public void insertloop()
     third.next=fourth;
     fourth.next=third;
 }
+public ListNode know_starting_point_of_loop()
+{
+    ListNode slwptr=head;
+    ListNode fstptr=head;
+    while(fstptr!=null && fstptr.next!=null)
+    {
+        fstptr=fstptr.next.next;
+        slwptr=slwptr.next;
+        if(slwptr==fstptr) return getStartingNode(slwptr);
+    }
+    return null;
+}
+    public ListNode getStartingNode(ListNode meetingPoint) {
+        ListNode start = head;
+        while (start != meetingPoint) {
+            start = start.next;
+            meetingPoint = meetingPoint.next;
+        }
+        return start;
+    }
     public static void main(String[] args) {
         detect_loop_in_sll sll = new detect_loop_in_sll();
         sll.insertloop();
         sll.display();
-        boolean hasLoop = sll.detectloop();
+boolean hasLoop = sll.detectloop();
         if (hasLoop) {
             System.out.println("Loop detected in the linked list.");
+
+            ListNode loopStart = sll.know_starting_point_of_loop();
+            if (loopStart != null) {
+                System.out.println("Starting node of loop is: " + loopStart.data);
+            }
         } else {
             System.out.println("No loop detected in the linked list.");
         }
     }
     
 }
+
