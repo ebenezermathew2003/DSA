@@ -24,6 +24,18 @@ public class print_nodes {
     {
         return length==0;
     }
+    public void insert_first(int value)
+    {
+        ListNode newNode = new ListNode(value);
+        if(isEmpty())
+        {
+            tail=newNode;
+        }else{
+            head.previous=newNode;
+        }
+        newNode.next=head;
+        head=newNode;
+    }
     public void insertlast(int value)
     {
         ListNode newNode=new ListNode(value);
@@ -75,6 +87,12 @@ public void print_previous()
         dll.insertlast(40);
         dll.print_front_nodes();
         dll.print_previous();
-
+        dll.insert_first(10);
+        dll.insert_first(15);
+        dll.insert_first(20);
+        dll.insert_first(25);
+        dll.insert_first(30);
+        dll.print_front_nodes();
+        
     }
 }
