@@ -1,0 +1,72 @@
+package DLL;
+
+public class print_nodes {
+    private ListNode head;
+    private ListNode tail;
+    private int length;
+
+    private class ListNode{
+        private int data;
+        private ListNode next;
+        private ListNode previous;
+
+        public ListNode(int data) {
+            this.data=data;
+    }
+}
+    public print_nodes()
+    {
+        this.head=null;
+        this.tail=null;
+        this.length=0;
+    }
+    public boolean isEmpty()
+    {
+        return length==0;
+    }
+    public void insertlast(int value)
+    {
+        ListNode newNode=new ListNode(value);
+        if(isEmpty())
+        {
+            head=newNode;
+        }
+       else
+       {
+        tail.next=newNode;
+       }
+       newNode.previous=tail;
+       tail=newNode;
+       length++;
+    }
+public void print_front_nodes()
+{
+    ListNode temp=head;
+    while(temp!=null)
+    {
+        System.out.print(temp.data+"-->");
+        temp=temp.next;
+    }
+    System.out.println("null");
+}
+public void print_previous()
+{
+    ListNode temp=tail;
+    while(temp!=null)
+    {
+        System.out.print(temp.data+"-->");
+        temp=temp.previous;
+    }
+    System.out.println("null");
+}
+    public static void main(String[] args) {
+        print_nodes dll = new print_nodes();
+        dll.insertlast(10);
+        dll.insertlast(20);
+        dll.insertlast(30);
+        dll.insertlast(40);
+        dll.print_front_nodes();
+        dll.print_previous();
+
+    }
+}
