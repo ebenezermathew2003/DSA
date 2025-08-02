@@ -35,6 +35,7 @@ public class print_nodes {
         }
         newNode.next=head;
         head=newNode;
+        length++;
     }
     public void insertlast(int value)
     {
@@ -93,6 +94,7 @@ public void print_previous()
         dll.insert_first(25);
         dll.insert_first(30);
         dll.print_front_nodes();
+        dll.print_previous();
         
     }
 }
