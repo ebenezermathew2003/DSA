@@ -41,6 +41,10 @@ public class print_nodes {
     }
 public void print_front_nodes()
 {
+    if(head==null)
+    {
+        return;
+    }
     ListNode temp=head;
     while(temp!=null)
     {
@@ -51,6 +55,10 @@ public void print_front_nodes()
 }
 public void print_previous()
 {
+    if(tail==null)
+    {
+        return;
+    }
     ListNode temp=tail;
     while(temp!=null)
     {
