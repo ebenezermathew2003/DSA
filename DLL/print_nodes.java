@@ -1,5 +1,7 @@
 package DLL;
 
+import java.util.NoSuchElementException;
+
 public class print_nodes {
     private ListNode head;
     private ListNode tail;
@@ -66,6 +68,23 @@ public void print_front_nodes()
     }
     System.out.println("null");
 }
+public ListNode delete_first_node()
+{
+    if(isEmpty())
+    {
+        throw new NoSuchElementException();
+    }
+    ListNode temp=head;
+    if(head==tail)
+    {
+        tail=null;
+    }else{
+        head.next.previous=null;
+    }
+    head=head.next;
+    temp.next=null;
+    return temp;
+}
 public void print_previous()
 {
     if(tail==null)
@@ -95,6 +114,10 @@ public void print_previous()
         dll.insert_first(30);
         dll.print_front_nodes();
         dll.print_previous();
+        dll.delete_first_node();
+        dll.delete_first_node();
+        dll.delete_first_node();
+        dll.print_front_nodes();
         
     }
 }
