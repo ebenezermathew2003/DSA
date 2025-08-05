@@ -85,6 +85,24 @@ public ListNode delete_first_node()
     temp.next=null;
     return temp;
 }
+public ListNode delete_last_node()
+{
+    if(isEmpty())
+    {
+        throw new NoSuchElementException();
+    }
+    ListNode temp=tail;
+    if(head==tail)
+    {
+        head=null;
+
+    }else{
+        tail.previous.next=null;
+    }
+    tail=tail.previous;
+    temp.previous=null;
+    return temp;
+}
 public void print_previous()
 {
     if(tail==null)
@@ -118,6 +136,7 @@ public void print_previous()
         dll.delete_first_node();
         dll.delete_first_node();
         dll.print_front_nodes();
-        
+        dll.delete_last_node();
+        dll.print_front_nodes();
     }
 }
