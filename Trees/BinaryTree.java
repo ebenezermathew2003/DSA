@@ -1,5 +1,5 @@
 package Trees;
-
+//Having prrOrder,postOrder,InOrder in this file
 public class BinaryTree {
     private TreeNode root;
 
