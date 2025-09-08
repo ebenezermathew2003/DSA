@@ -36,7 +36,7 @@ public class Binary_search_tree {
         inorder(root.left);
         System.out.print(root.data + " ");
         inorder(root.right);
-    }
+    } 
 
     public void printTree() {
         inorder(root);
